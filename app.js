@@ -29,5 +29,23 @@ angularApp.controller("mainController", [
     $log.info("Give some info");
     $log.log("Log something");
     $log.warn("Pull up!!  Pull up!!");
+
+    $scope.linkedin = ""; // 2 way data binding
+    $scope.lowerCaseLinkedin = function () {
+      return $filter("lowercase")($scope.linkedin);
+    };
+
+    $scope.$watch("linkedin", function (newValue, oldValue) {
+      console.log("---------");
+      console.log(`old: ${oldValue}`);
+      console.log(`new: ${newValue}`);
+      console.log("---------");
+    });
+
+    $scope.rules = [
+      { ruleName: "Must be 5 characters" },
+      { ruleName: "Must not be used elsewhere" },
+      { ruleName: "Must be awesome" },
+    ];
   },
 ]); // put in array to minify the code

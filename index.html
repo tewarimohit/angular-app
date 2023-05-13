@@ -39,7 +39,17 @@
 			<div ng-controller="mainController">
                 
                 <h1>Hello {{name}}!</h1>
-                
+
+                <div>
+                    <label for="linkedin">Linkedin Handle</label>
+                    <input type="text" ng-model="linkedin"/>
+
+                </div>
+                <h2>linkedin.com/{{lowerCaseLinkedin()}}</h2>
+                <h3>Rules</h3>
+                <ul>
+                    <li ng-repeat="rule in rules">{{rule.ruleName}}</li>
+                </ul>
             </div>
 
 		</div>
